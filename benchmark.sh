@@ -33,7 +33,10 @@ for f in ./*; do
  if [ -d $f ]; then
   cd $f
   if [ -f "run" ]; then
-  echo -e -n "${BOLDMAGENTA}${f:2}:${ENDCOLOR} ${LIGHTGREY}" && ./run && echo -e -n "${ENDCOLOR}"
+  f="$(basename -- $f)"
+  f=( $f )
+  f="${f[@]^}"
+  echo -e -n "${BOLDMAGENTA}${f}:${ENDCOLOR} ${LIGHTGREY}" && ./run && echo -e -n "${ENDCOLOR}"
   cd ..
   fi
  fi
