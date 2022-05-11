@@ -1,1 +1,7 @@
-node ./index.js
+if ! command -v node &> /dev/null
+then
+ echo "Node.js is not installed!"
+ exit
+else
+ node ./index.js
+fi

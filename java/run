@@ -1,1 +1,7 @@
-java ./index.java
+if ! command -v java &> /dev/null
+then
+ echo "Java is not installed!"
+ exit
+else
+ java ./index.java
+fi

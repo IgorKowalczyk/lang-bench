@@ -1,1 +1,8 @@
-go run ./index.go
+if ! command -v go &> /dev/null
+then
+ echo "Go is not installed!"
+ exit
+else
+ go run ./index.go
+fi
+
